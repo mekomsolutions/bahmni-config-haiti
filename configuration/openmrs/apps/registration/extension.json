@@ -36,7 +36,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "HAITI_Triage information",
+            "conceptName": "Haiti_Triage information",
             "translationKey": "TRIAGE_INFORMATION"
         },
         "order": 2,
@@ -47,7 +47,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "HAITI_Vital Signs Form",
+            "conceptName": "Haiti_Vital Signs Form",
             "translationKey": "VITAL_SIGNS"
         },
         "order": 1,
