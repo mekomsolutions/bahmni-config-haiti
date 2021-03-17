@@ -44,7 +44,7 @@
   "LOGIN_MESSAGE_ENTER_PASSWORD_KEY": "Entrez votre mot de passe",
   "LOGIN_LABEL_SELECT_LOCALE_KEY": "Langue",
   "LOGIN_LABEL_LOGIN_ERROR_MESSAGE_KEY": "Vous n'êtes pas authentifié ou votre session a expiré. Connectez vous s'il vous plait.",
-  "LOGIN_LABEL_SELECT_LOCATION_KEY": "Choisir l'emplacement'",
+  "LOGIN_LABEL_SELECT_LOCATION_KEY": "Choisir l'emplacement",
   "LOGIN_LABEL_PASSWORD_KEY": "Mot de passe",
   "LOGIN_LABEL_LOCATION_KEY": "Emplacement",
   "LOGIN_LABEL_LOGIN_KEY": "S'identifier",
