@@ -28,15 +28,15 @@ angular.module('bahmni.common.displaycontrol.custom')
                             vaccination.conceptUuid = x.conceptUuid;
                             vaccination.name = x.valueAsString;
                             vaccination.fullySpecifiedName = x.value.name;
-                        } else if (x.concept.name == 'Vaccination date') {
+                        } else if (x.concept.name == 'Date de vaccination') {
                             vaccination.vaccinationDate = x.value;
-                        } else if (x.concept.name == 'Vaccination sequence number') {
+                        } else if (x.concept.name == 'Numéro de vaccinations') {
                             vaccination.vaccationSequenceValue = x.value;
-                        } else if (x.concept.name == 'Vaccine Manufacturer') {
+                        } else if (x.concept.name == 'Fabricant du vaccin') {
                             vaccination.vaccationManufacturer = x.valueAsString;
-                        } else if (x.concept.name == 'Vaccine Lot Number') {
+                        } else if (x.concept.name == 'Numéro du lot du vaccin') {
                             vaccination.vaccineLotNumber = x.value;
-                        } else if (x.concept.name == 'Vaccine lot expiration date') {
+                        } else if (x.concept.name == 'Date de péremption du vaccin') {
                             vaccination.vaccinationExpiryDate = x.value;
                         }
                     }

@@ -128,8 +128,8 @@
                 "displayOrder":11,
                 "dashboardConfig":{
                     "conceptNames":[
-                        "HEIGHT",
-                        "Weight",
+                        "Taille",
+                        "Poids",
                         "BMI",
                         "BMI STATUS"
                     ],
@@ -138,8 +138,8 @@
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
-                        "HEIGHT",
-                        "Weight",
+                        "Taille",
+                        "Poids",
                         "BMI",
                         "BMI STATUS"
                     ],
@@ -173,7 +173,7 @@
                         "numberOfVisits":"10",
                         "groupBy":"encounters",
                         "obsConcepts":[
-                            "Weight",
+                            "Poids",
                             "Vitals"
                         ],
                         "drugConcepts":[
@@ -217,7 +217,7 @@
                     "translationKey": "RECENT_VACCINATIONS",
                     "template": "<vaccination></vaccination>",
                     "vaccinationSets":[
-                        "Vaccination History"
+                        "Historique vaccinale"
                     ]
                 }
             },
@@ -252,13 +252,13 @@
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
-                        "Lab Samples"
+                        "Échantillons de laboratoire"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
-                        "Lab Samples"
+                        "Échantillons de laboratoire"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -362,7 +362,7 @@
                 "translationKey": "DASHBOARD_TITLE_WEIGHT_AGE_KEY",
                 "config":{
                     "yAxisConcepts":[
-                        "Weight"
+                        "Poids"
                     ],
                     "referenceData":"charts/weightForAge.csv",
                     "numberOfVisits":20
@@ -387,7 +387,7 @@
                 "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
                 "config":{
                     "yAxisConcepts":[
-                        "Weight",
+                        "Poids",
                         "BMI"
                     ],
                     "xAxisConcept":"observationDateTime",
@@ -400,7 +400,7 @@
                 "translationKey": "DASHBOARD_TITLE_PULSE",
                 "config":{
                     "yAxisConcepts":[
-                        "Pulse"
+                        "Pouls"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
