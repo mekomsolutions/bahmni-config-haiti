@@ -4,7 +4,7 @@
         "displayByDefault": true,
         "printing": {
             "title": "Haiti",
-            "header": "Visit",
+            "header": "Visite",
             "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png"
         },
         "defaultSections": true,
@@ -40,7 +40,7 @@
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
             "title": "Haiti",
-            "header": "Discharge Summary",
+            "header": "Synthèse de sortie",
             "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png"
         },
         "sections": {

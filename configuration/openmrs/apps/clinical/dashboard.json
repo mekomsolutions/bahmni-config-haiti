@@ -5,7 +5,7 @@
         "maxRecentlyViewedPatients":10,
         "printing": {
             "title": "Haiti",
-            "header": "Patient General Report",
+            "header": "Rapport général",
             "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png",
             "showNameAndImage": true
         },
@@ -352,7 +352,7 @@
         "maxRecentlyViewedPatients":10,
         "printing": {
             "title": "Haiti",
-            "header": "Patient Trends",
+            "header": "Tendances",
             "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png",
             "showNameAndImage": true
         },
@@ -426,7 +426,7 @@
         "maxRecentlyViewedPatients":10,
         "printing": {
             "title": "Haiti",
-            "header": "Patient Summary Report",
+            "header": "Synthèse",
             "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png",
             "showNameAndImage": true
         },
