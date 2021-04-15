@@ -17,11 +17,11 @@
           "Inhalation",
           "Intramusculaire",
           "Intraveineuse",
-          "Intravaginalee",
           "Ophtalmique",
           "Otique",
           "Sous-cutanée",
           "Rectal",
+          "Intravaginale",
           "Voir Commentaires"
         ],
         "frequencies": [
@@ -45,11 +45,16 @@
           "Mensuellement",
           "Voir Commentaires"
         ],
+        "durationUnitsFactors" : [
+          {"name": "Jour(s)", "factor": 1},
+          {"name": "Semaine(s)", "factor": 7},
+          {"name": "Mois", "factor": 30}
+      ],
         "frequencyDefaultDurationUnitsMap": [
           {
             "minFrequency": 5,
             "maxFrequency": null,
-            "defaultDurationUnit": "Heure(s)"
+            "defaultDurationUnit": "Jour(s)"
           },
           {
             "minFrequency": "1/7",
@@ -147,6 +152,10 @@
           "Oil": {
             "doseUnits": "Application(s)",
             "route": "Topique"
+          },
+          "Ovule": {
+            "doseUnits": "Ovule(s)",
+            "route": "Intravaginale"
           },
           "Pomade": {
             "doseUnits": "Application(s)",
