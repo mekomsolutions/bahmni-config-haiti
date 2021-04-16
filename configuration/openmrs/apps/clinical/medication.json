@@ -19,7 +19,7 @@
           "Intraveineuse",
           "Ophtalmique",
           "Otique",
-          "Sous-cutanée",
+          "Sous-cutanee",
           "Rectal",
           "Intravaginale",
           "Voir Commentaires"
@@ -74,7 +74,7 @@
         ],
         "drugFormDefaults": {
           "Ayurvedic": {
-            "doseUnits": "Cuillère(s) à café",
+            "doseUnits": "Cuillere(s) a cafe",
             "route": "Oral"
           },
           "Capsule": {
@@ -90,15 +90,15 @@
             "route": "Ophtalmique"
           },
           "Food Supplement": {
-            "doseUnits": "Unité(s)",
+            "doseUnits": "Unite(s)",
             "route": "Oral"
           },
           "Sublingual": {
-            "doseUnits": "Comprimé(s)",
+            "doseUnits": "Comprime(s)",
             "route": "Oral"
           },
           "Inhalable": {
-            "doseUnits": "Bouffée(s)",
+            "doseUnits": "Bouffee(s)",
             "route": "Inhalation"
           },
           "Injectable": {
@@ -110,7 +110,7 @@
             "route": "Topique"
           },
           "Pessary": {
-            "doseUnits": "Unité(s)",
+            "doseUnits": "Unite(s)",
             "route": "Intravaginale"
           },
           "Powder": {
@@ -122,7 +122,7 @@
             "route": "Intraveineuse"
           },
           "Spray": {
-            "doseUnits": "Bouffée(s)",
+            "doseUnits": "Bouffee(s)",
             "route": "Inhalation"
           },
           "Syrup/Suspension": {
@@ -134,11 +134,11 @@
             "route": "Oral"
           },
           "Tablet": {
-            "doseUnits": "Comprimé(s)",
+            "doseUnits": "Comprime(s)",
             "route": "Oral"
           },
           "Unit": {
-            "doseUnits": "Unité(s)",
+            "doseUnits": "Unite(s)",
             "route": "See comments"
           },
           "Oral Solution": {
@@ -162,7 +162,7 @@
             "route": "Topique"
           },
           "Suppository": {
-            "doseUnits": "Unité(s)",
+            "doseUnits": "Unite(s)",
             "route": "Rectal"
           }
         }

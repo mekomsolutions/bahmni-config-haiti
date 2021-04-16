@@ -223,7 +223,7 @@
                     "translationKey": "RECENT_VACCINATIONS",
                     "template": "<vaccination></vaccination>",
                     "vaccinationSets":[
-                        "Historique vaccinale"
+                        "Historique vaccinal"
                     ]
                 }
             },
