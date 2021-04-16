@@ -3,9 +3,9 @@
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
-            "title": "Bahmni",
-            "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "title": "Haiti",
+            "header": "Visite",
+            "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png"
         },
         "defaultSections": true,
         "sections": {
@@ -16,15 +16,12 @@
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
-                        "Pulse",
-                        "Diastolic",
-                        "Systolic",
-                        "Temperature",
-                        "RR",
-                        "SPO2",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
+                        "Groupe tension artérielle",
+                        "Température",
+                        "Pouls",
+                        "Frequence respiratoire",
+                        "Saturation d'oxygène",
+                        "Périmètre bracchial" 
                     ],
                     "labConcepts": ""
                 }
@@ -42,9 +39,9 @@
     "dischargeSummary":{
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
-            "title": "Bahmni",
-            "header": "Discharge Summary",
-            "logo": "../images/bahmniLogo.png"
+            "title": "Haiti",
+            "header": "Synthèse de sortie",
+            "logo": "/bahmni_config/openmrs/apps/home/Haiti_logo.png"
         },
         "sections": {
             "PatientInformation":{

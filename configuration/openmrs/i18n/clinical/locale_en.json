@@ -97,6 +97,8 @@
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Need Print for this order.",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Needs Print",
 
+  "CLINICAL_ACCEPT": "Accept",
+
   "CONSULTATION_PAGE_KEY" :"Consultation",
   "PROGRAM_MANAGEMENT_PAGE_KEY":"Program Management Page",
   "DISCHARGE_SUMMARY_PAGE_KEY":"Discharge Summary Page",
