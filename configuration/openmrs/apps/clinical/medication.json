@@ -77,15 +77,15 @@
             "doseUnits": "Cuillere(s) a cafe",
             "route": "Oral"
           },
-          "Capsule": {
+          "Gelule": {
             "doseUnits": "Gellule(s)",
             "route": "Oral"
           },
-          "Cream": {
+          "Creme": {
             "doseUnits": "Application(s)",
             "route": "Topique"
           },
-          "Drops": {
+          "Gouttes": {
             "doseUnits": "Goutte(s)",
             "route": "Ophtalmique"
           },
@@ -109,11 +109,7 @@
             "doseUnits": "Application(s)",
             "route": "Topique"
           },
-          "Pessary": {
-            "doseUnits": "Unite(s)",
-            "route": "Intravaginale"
-          },
-          "Powder": {
+          "Poudre": {
             "doseUnits": "mg",
             "route": "Topique"
           },
@@ -121,19 +117,19 @@
             "doseUnits": "ml",
             "route": "Intraveineuse"
           },
-          "Spray": {
+          "Vaporisateur": {
             "doseUnits": "Bouffee(s)",
             "route": "Inhalation"
           },
-          "Syrup/Suspension": {
+          "Sirop/Suspuension": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Syrup": {
+          "Sirop": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Tablet": {
+          "Comprime": {
             "doseUnits": "Comprime(s)",
             "route": "Oral"
           },
@@ -141,27 +137,27 @@
             "doseUnits": "Unite(s)",
             "route": "See comments"
           },
-          "Oral Solution": {
+          "Solution orale": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Drinkable Suspension Gel": {
+          "Suspension Buvable Gel": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Oil": {
+          "Huile": {
             "doseUnits": "Application(s)",
             "route": "Topique"
           },
-          "Ovule": {
+          "Ovule(s)": {
             "doseUnits": "Ovule(s)",
             "route": "Intravaginale"
           },
-          "Pomade": {
+          "Pommade": {
             "doseUnits": "Application(s)",
             "route": "Topique"
           },
-          "Suppository": {
+          "Suppositoire": {
             "doseUnits": "Unite(s)",
             "route": "Rectal"
           }
