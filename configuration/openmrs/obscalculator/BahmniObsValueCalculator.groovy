@@ -58,8 +58,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
-        BahmniObservation heightObservation = find("Height", observations, null) ? find("Height", observations, null) : find("Taille", observations, null)
-        BahmniObservation weightObservation = find("Weight", observations, null) ? find("Weight", observations, null) :find("Poids", observations, null)
+        BahmniObservation heightObservation = find("Taille", observations, null)
+        BahmniObservation weightObservation = find("Poids", observations, null)
         BahmniObservation parent = null;
                                
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
