@@ -1,11 +1,13 @@
 import org.apache.commons.lang.StringUtils
 import org.hibernate.Query
-import org.hibernate.SessionFactory
-import org.openmrs.Obs
-import org.openmrs.Patient
+import org.hibernate.SessionFactory;
+import org.openmrs.Obs;
+import org.openmrs.Patient;
+import org.openmrs.Concept;
+import org.openmrs.Encounter;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.util.OpenmrsUtil;
-import org.openmrs.api.context.Context
+import org.openmrs.api.context.Context;
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction;
@@ -22,6 +24,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double BMI_OVERWEIGHT = 30.0;
     static Double BMI_OBESE = 35.0;
     static Double BMI_SEVERELY_OBESE = 40.0;
+    static Double ZERO = 0.0;
     static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
 
     public static enum BmiStatus {
@@ -55,11 +58,26 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
-        BahmniObservation heightObservation = find("Height", observations, null)
-        BahmniObservation weightObservation = find("Weight", observations, null)
+        BahmniObservation heightObservation = find("Taille", observations, null)
+        BahmniObservation weightObservation = find("Poids", observations, null)
         BahmniObservation parent = null;
-
+                               
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
+            def heightObs = null, weightObs = null;
+            Encounter encounter = Context.getEncounterService().getEncounterByUuid(bahmniEncounterTransaction.getEncounterUuid());
+            if (encounter != null) {
+                Set<Obs> latestObsOfEncounter = encounter.getObsAtTopLevel(true);
+                latestObsOfEncounter.each { Obs latestObs ->
+                    for (Obs groupMember : latestObs.groupMembers) {
+                        heightObs = heightObs ? heightObs : (groupMember.concept.getName().name.equalsIgnoreCase("Taille") ? groupMember : null);
+                        weightObs = weightObs ? weightObs : (groupMember.concept.getName().name.equalsIgnoreCase("Poids") ? groupMember : null);
+                    }
+                }
+                if (isSameObs(heightObservation, heightObs) && isSameObs(weightObservation, weightObs)) {
+                    return;
+                }
+            }
+
             BahmniObservation bmiDataObservation = find("BMI Data", observations, null)
             BahmniObservation bmiObservation = find("BMI", bmiDataObservation ? [bmiDataObservation] : [], null)
             BahmniObservation bmiAbnormalObservation = find("BMI Abnormal", bmiDataObservation ? [bmiDataObservation]: [], null)
@@ -74,7 +92,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             parent = obsParent(heightObservation, parent)
             parent = obsParent(weightObservation, parent)
 
-            if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
+            if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {                                              
                 voidObs(bmiDataObservation);
                 voidObs(bmiObservation);
                 voidObs(bmiStatusDataObservation);
@@ -83,8 +101,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            def previousHeightValue = fetchLatestValue("Height", bahmniEncounterTransaction.getPatientUuid(), heightObservation, nowAsOfEncounter)
-            def previousWeightValue = fetchLatestValue("Weight", bahmniEncounterTransaction.getPatientUuid(), weightObservation, nowAsOfEncounter)
+            def previousHeightValue = fetchLatestValue("Taille", bahmniEncounterTransaction.getPatientUuid(), heightObservation, nowAsOfEncounter)
+            def previousWeightValue = fetchLatestValue("Poids", bahmniEncounterTransaction.getPatientUuid(), weightObservation, nowAsOfEncounter)
 
             Double height = hasValue(heightObservation) && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
             Double weight = hasValue(weightObservation) && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
@@ -99,8 +117,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            bmiDataObservation = bmiDataObservation ?: createObs("BMI Data", parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
-            bmiStatusDataObservation = bmiStatusDataObservation ?: createObs("BMI Status Data", parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            if(encounter != null) {
+                voidPreviousBMIObs(encounter.getObsAtTopLevel(false));
+                voidPreviousBMIObs(encounter.getObs());
+            }
+
+            bmiDataObservation = bmiDataObservation ?: createObs("BMI Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            bmiStatusDataObservation = bmiStatusDataObservation ?: createObs("BMI Status Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
 
             def bmi = bmi(height, weight)
             bmiObservation = bmiObservation ?: createObs("BMI", bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
@@ -171,6 +194,15 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return hasValue(observation) && !observation.voided ? observation.getObservationDateTime() : null;
     }
 
+    private static boolean isSameObs(BahmniObservation observation, Obs editedObs) {
+        if(observation && editedObs) {
+            return  (editedObs.uuid == observation.encounterTransactionObservation.uuid && editedObs.valueNumeric == observation.value);
+        } else if(observation == null && editedObs == null) {
+            return true;
+        }
+        return false;
+    }
+
     private static boolean hasValue(BahmniObservation observation) {
         return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
@@ -178,6 +210,22 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     private static void voidObs(BahmniObservation bmiObservation) {
         if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
+        }
+    }
+
+    private static void voidPreviousBMIObs(Set<Obs> bmiObs) {
+        if(bmiObs) {
+            bmiObs.each { Obs obs ->
+                Concept concept = Context.getConceptService().getConceptByUuid(obs.getConcept().uuid);
+                if (concept.getName().name.equalsIgnoreCase("BMI Data") || concept.getName().name.equalsIgnoreCase("BMI") ||
+                        concept.getName().name.equalsIgnoreCase("BMI ABNORMAL") || concept.getName().name.equalsIgnoreCase("BMI Status Data")
+                        || concept.getName().name.equalsIgnoreCase("BMI STATUS") || concept.getName().name.equalsIgnoreCase("BMI STATUS ABNORMAL")) {
+
+                    obs.voided = true;
+                    obs.setVoidReason("Replaced with a new one because it was changed");
+                    Context.getObsService().saveObs(obs, "Replaced with a new one because it was changed");
+                }
+            }
         }
     }
 
@@ -191,6 +239,11 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def bmi(Double height, Double weight) {
+        if (height == ZERO) {
+            throw new IllegalArgumentException("Please enter Height greater than zero")
+        } else if (weight == ZERO) {
+            throw new IllegalArgumentException("Please enter Weight greater than zero")
+        }
         Double heightInMeters = height / 100;
         Double value = weight / (heightInMeters * heightInMeters);
         return new BigDecimal(value).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
