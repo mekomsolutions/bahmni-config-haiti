@@ -157,6 +157,10 @@
             "doseUnits": "Application(s)",
             "route": "Topique"
           },
+          "Pate": {
+            "doseUnits": "Paquet(s)",
+            "route": "Oral"
+          },
           "Suppositoire": {
             "doseUnits": "Unite(s)",
             "route": "Rectal"
