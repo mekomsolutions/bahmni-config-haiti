@@ -274,6 +274,8 @@
   "MODULE_LABEL_MALNUTRITION_KEY":"Malnutrition",
   "MODULE_LABEL_GENERAL_KEY":"Général",
   "MODULE_LABEL_TB_KEY":"TB",
+  "MODULE_LABEL_LAB_KEY": "LAB",
+
   "MONTHS": "Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre",
   "MONTH_LABEL": "Mois",
   "NOTES_LABEL": "Notes",
