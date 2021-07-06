@@ -1,0 +1,34 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 3
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 1.0
+      q1: 1.2613872124741694
+      q3: 2.9364916731037085
+      max: 3.0
+      sd: 0.927960727138337
+      avg: 2.111111111111111
+visibility_type: normal
+base_type: type/Decimal
+last_analyzed: '2021-07-06T08:00:03.577485Z'
+custom_position: 0
+special_type: null
+position: 16
+fingerprint_version: 5
+name: vaccination_sequence_number
+database_position: 16
+has_field_values: null
+display_name: Vaccination Sequence Number
+parent_id: null
+caveats: null
+active: true
+database_type: numeric
+description: null
+fk_target_field_id: null

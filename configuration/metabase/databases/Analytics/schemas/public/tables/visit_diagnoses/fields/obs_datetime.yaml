@@ -1,0 +1,30 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 5
+    nil%: 0.0
+  type:
+    type/DateTime:
+      earliest: '2021-07-05T13:25:03Z'
+      latest: '2021-07-05T13:50:53Z'
+visibility_type: normal
+base_type: type/DateTime
+last_analyzed: '2021-07-05T14:00:03.870804Z'
+custom_position: 0
+special_type: null
+position: 4
+fingerprint_version: 5
+name: obs_datetime
+database_position: 4
+has_field_values: null
+display_name: O Bs Date Time
+parent_id: null
+caveats: null
+active: true
+database_type: timestamp
+description: null
+fk_target_field_id: null

@@ -1,0 +1,41 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - null
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 6
+    nil%: 0.1666666666666667
+  type:
+    type/Number:
+      min: 1.0
+      q1: 1.75
+      q3: 4.25
+      max: 5.0
+      sd: 1.5811388300841898
+      avg: 3.0
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Category
+position: 2
+fingerprint_version: 5
+name: parent_level_id
+database_position: 2
+has_field_values: auto-list
+display_name: Parent Level ID
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

@@ -1,0 +1,49 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":1065},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":121},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":17},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":1879},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":1},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":2},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":31},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":3},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":481},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":5},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":741},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":7},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcCursorItemReader.read.count","int":9492},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":"JdbcPagingItemReader.start.after","linked-hash-map":[""]},{"string":"JdbcPagingItemReader.read.count","int":1},{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  - '{"map":[{"entry":[{"string":["batch.taskletType","org.springframework.batch.core.step.item.ChunkOrientedTasklet"]},{"string":["batch.stepType","org.springframework.batch.core.step.tasklet.TaskletStep"]}]}]}'
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 9
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 1.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 255.56363636363636
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/SerializedJSON
+position: 1
+fingerprint_version: 5
+name: short_context
+database_position: 1
+has_field_values: auto-list
+display_name: Short Context
+parent_id: null
+caveats: null
+active: true
+database_type: varchar
+description: null
+fk_target_field_id: null

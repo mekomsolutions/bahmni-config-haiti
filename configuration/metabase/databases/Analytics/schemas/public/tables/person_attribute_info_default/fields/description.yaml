@@ -1,0 +1,50 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Adresse de la personne à contacter
+  - Assurance
+  - Lien avec la personne à contacter
+  - Nom de la mère
+  - Nom de la personne à contacter
+  - Numéro de carte d’assurance
+  - Numéro de la personne à contacter
+  - Numéro de téléphone (1)
+  - Numéro de téléphone (2)
+  - Profession
+  - Prénoms de la mère
+  - Religion
+  - Situation matrimoniale
+  - familyNameLocal
+  - givenNameLocal
+  - middleNameLocal
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 16
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 20.5
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Description
+position: 2
+fingerprint_version: 5
+name: description
+database_position: 2
+has_field_values: auto-list
+display_name: Description
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null

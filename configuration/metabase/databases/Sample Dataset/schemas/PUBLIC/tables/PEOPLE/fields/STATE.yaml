@@ -1,0 +1,83 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - AK
+  - AL
+  - AR
+  - AZ
+  - CA
+  - CO
+  - CT
+  - DE
+  - FL
+  - GA
+  - IA
+  - ID
+  - IL
+  - IN
+  - KS
+  - KY
+  - LA
+  - MA
+  - MD
+  - ME
+  - MI
+  - MN
+  - MO
+  - MS
+  - MT
+  - NC
+  - ND
+  - NE
+  - NH
+  - NJ
+  - NM
+  - NV
+  - NY
+  - OH
+  - OK
+  - OR
+  - PA
+  - RI
+  - SC
+  - SD
+  - TN
+  - TX
+  - UT
+  - VA
+  - VT
+  - WA
+  - WI
+  - WV
+  - WY
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 49
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 1.0
+      average-length: 2.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/State
+position: 7
+fingerprint_version: 5
+name: STATE
+database_position: 7
+has_field_values: auto-list
+display_name: State
+parent_id: null
+caveats: null
+active: true
+database_type: CHAR
+description: The state or province of the account’s billing address
+fk_target_field_id: null

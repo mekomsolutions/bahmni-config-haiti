@@ -1,0 +1,12 @@
+points_of_interest: null
+visibility_type: null
+schema: public
+show_in_getting_started: false
+name: person_attribute_info_default
+entity_name: null
+display_name: Person Attribute Info Default
+caveats: null
+active: true
+entity_type: entity/UserTable
+field_order: database
+description: null

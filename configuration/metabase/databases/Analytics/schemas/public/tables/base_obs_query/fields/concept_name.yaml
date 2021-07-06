@@ -1,0 +1,52 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Bahmni Diagnosis Revised
+  - Bahmni Initial Diagnosis
+  - Booster
+  - Certitude du diagnostic
+  - Coded Diagnosis
+  - Date de vaccination
+  - Degré de diagnostic
+  - Diagnosis Certainty
+  - Diagnosis order
+  - Diagnostic codé
+  - Diagnostics de visite
+  - Historique vaccinal
+  - Numéro de vaccinations
+  - Vaccination History
+  - Vaccination date
+  - Vaccination sequence number
+  - Vaccinations
+  - Visit Diagnoses
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 10
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 19.833333333333332
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T15:14:59.702446Z'
+custom_position: 0
+special_type: type/Category
+position: 2
+fingerprint_version: 5
+name: concept_name
+database_position: 2
+has_field_values: auto-list
+display_name: Concept Name
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null

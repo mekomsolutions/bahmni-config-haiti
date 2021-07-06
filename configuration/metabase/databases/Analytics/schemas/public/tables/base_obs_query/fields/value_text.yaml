@@ -1,0 +1,40 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 01abb3b1-2fb1-44fd-932c-782be15122c0
+  - 20e38b7d-3705-4397-a201-0946445077b8
+  - 5e055865-f0ac-4a22-b767-ec42bf3e796c
+  - 950b2900-01a7-4ea8-aaf5-5104920172c5
+  - b2e02c31-22c0-42f1-8115-e2dd29fda79f
+  - null
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 6
+    nil%: 0.8333333333333333
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 6.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T14:18:04.525626Z'
+custom_position: 0
+special_type: type/Category
+position: 12
+fingerprint_version: 5
+name: value_text
+database_position: 14
+has_field_values: auto-list
+display_name: Value Text
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null

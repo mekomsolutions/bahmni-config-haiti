@@ -1,0 +1,23 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint: null
+visibility_type: normal
+base_type: type/BigInteger
+last_analyzed: null
+custom_position: 0
+special_type: type/PK
+position: 0
+fingerprint_version: 0
+name: job_instance_id
+database_position: 0
+has_field_values: null
+display_name: Job Instance ID
+parent_id: null
+caveats: null
+active: true
+database_type: int8
+description: null
+fk_target_field_id: null

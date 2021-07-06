@@ -1,0 +1,88 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Asthma
+  - Asthma (J45.9)
+  - Asthme
+  - Asthme (J45.9)
+  - BCG
+  - BCG Vaccination
+  - Confirmed
+  - Confirmé
+  - DTP (Diphtheria Tetanus Pertusis Vaccination)
+  - DTP (Vaccination diphtérique tétanique coquelucheux)
+  - Diabete
+  - Diabete (E14.9)
+  - Diabete de type 1
+  - Diabete de type 1 (E10)
+  - Diabete de type 2
+  - Diabete de type 2 (E11)
+  - Diabetes
+  - Diabetes (E14.9)
+  - Diphtheria Tetanus Pertusis Vaccination
+  - 'False'
+  - Falso
+  - Faux
+  - Hypertension
+  - Hypertension (I10)
+  - Hypertension essentielle
+  - Hypertension essentielle (I10)
+  - MR (Measles Rubella Vaccination)
+  - Measles Rubella Vaccination
+  - 'No'
+  - Non
+  - Não
+  - OPV (Oral Polio Vaccination)
+  - Oral Polio Vaccination
+  - PCV13 (Pneumococcal Vaccination)
+  - PCV13 (Vaccination pneumocoque)
+  - Pneumococcal Vaccination
+  - Presumed
+  - Primaire
+  - Primary
+  - Présumé
+  - RR (Vaccination rubéole rougeole)
+  - Secondaire
+  - Secondary
+  - Type 1 diabetes
+  - Type 1 diabetes (E10)
+  - Type 2 diabetes
+  - Type 2 diabetes (E11)
+  - VPO (Vaccination polio oral)
+  - Vaccination BCG
+  - Vaccination diphtérique tétanique coquelucheux
+  - Vaccination pneumocoque
+  - Vaccination polio oral
+  - Vaccination rubéole rougeole
+  - null
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 35
+    nil%: 0.08333333333333333
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 7.016666666666667
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T16:41:48.883655Z'
+custom_position: 0
+special_type: null
+position: 8
+fingerprint_version: 5
+name: value_coded_name
+database_position: 8
+has_field_values: auto-list
+display_name: Value Coded Name
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null

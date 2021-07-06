@@ -1,0 +1,36 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - null
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 1
+    nil%: 1.0
+  type:
+    type/Number:
+      min: null
+      q1: null
+      q3: null
+      max: null
+      sd: null
+      avg: null
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: null
+position: 5
+fingerprint_version: 5
+name: service_max_load
+database_position: 5
+has_field_values: auto-list
+display_name: Service Max Load
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

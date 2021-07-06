@@ -1,0 +1,14 @@
+points_of_interest: null
+visibility_type: null
+schema: PUBLIC
+show_in_getting_started: false
+name: REVIEWS
+entity_name: null
+display_name: Reviews
+caveats: null
+active: true
+entity_type: entity/GenericTable
+field_order: database
+description: These are reviews our customers have left on products. Note that these
+  are not tied to orders so it is possible people have reviewed products they did
+  not purchase from us.

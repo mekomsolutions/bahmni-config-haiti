@@ -1,0 +1,33 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2500
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 1.0
+      percent-state: 0.0
+      average-length: 24.1824
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Email
+position: 2
+fingerprint_version: 5
+name: EMAIL
+database_position: 2
+has_field_values: null
+display_name: Email
+parent_id: null
+caveats: null
+active: true
+database_type: VARCHAR
+description: The contact email for the account.
+fk_target_field_id: null
