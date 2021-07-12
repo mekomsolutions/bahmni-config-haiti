@@ -1,0 +1,23 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint: null
+visibility_type: normal
+base_type: type/Date
+last_analyzed: null
+custom_position: 0
+special_type: null
+position: 22
+fingerprint_version: 0
+name: date_of_last_period
+database_position: 22
+has_field_values: null
+display_name: Date Of Last Period
+parent_id: null
+caveats: null
+active: true
+database_type: date
+description: null
+fk_target_field_id: null

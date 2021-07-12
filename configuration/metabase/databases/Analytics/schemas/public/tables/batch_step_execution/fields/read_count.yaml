@@ -1,0 +1,48 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 0
+  - 1
+  - 2
+  - 4
+  - 6
+  - 16
+  - 30
+  - 120
+  - 480
+  - 740
+  - 1064
+  - 1878
+  - 9491
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 7
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 0.0
+      q1: 0.0
+      q3: 1.077330882356047
+      max: 9491.0
+      sd: 1299.8379787664965
+      avg: 207.54545454545453
+visibility_type: normal
+base_type: type/BigInteger
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Quantity
+position: 8
+fingerprint_version: 5
+name: read_count
+database_position: 8
+has_field_values: auto-list
+display_name: Read Count
+parent_id: null
+caveats: null
+active: true
+database_type: int8
+description: null
+fk_target_field_id: null

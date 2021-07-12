@@ -1,0 +1,64 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Address hierarchy levels
+  - Appointment service
+  - Appointment service availability
+  - Appointment speciality
+  - Concepts
+  - Conditions
+  - Diagnoses Data
+  - Form2 Obs Data
+  - Location Attribute Details
+  - Location Tag Map
+  - Locations
+  - Medication Data
+  - MetaData Dictionary
+  - Obs
+  - Obs Data
+  - Orders Data
+  - Patient Encounter Details
+  - Patient State
+  - Patient Visit Details
+  - Patient allergy status
+  - Patient appointment
+  - Patient identification
+  - Person Attribute Info
+  - Person Attributes
+  - Person address
+  - Person details
+  - Visit Attribute Details
+  - Visit Attributes
+  - Visits
+  - base_obs_query
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 29
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 16.655172413793103
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Category
+position: 2
+fingerprint_version: 5
+name: job_name
+database_position: 2
+has_field_values: auto-list
+display_name: Job Name
+parent_id: null
+caveats: null
+active: true
+database_type: varchar
+description: null
+fk_target_field_id: null

@@ -1,0 +1,30 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2
+    nil%: 0.0
+  type:
+    type/DateTime:
+      earliest: '1988-01-01'
+      latest: '1999-01-01'
+visibility_type: normal
+base_type: type/Date
+last_analyzed: '2021-07-05T14:00:03.870804Z'
+custom_position: 0
+special_type: null
+position: 13
+fingerprint_version: 5
+name: birthdate
+database_position: 13
+has_field_values: null
+display_name: Birthdate
+parent_id: null
+caveats: null
+active: true
+database_type: date
+description: null
+fk_target_field_id: null

@@ -1,0 +1,35 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 340
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 15.691943673970439
+      q1: 49.74894519060184
+      q3: 105.42965746993103
+      max: 148.22900526552291
+      sd: 32.53705013056317
+      avg: 77.01295465356547
+visibility_type: normal
+base_type: type/Float
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: null
+position: 3
+fingerprint_version: 5
+name: SUBTOTAL
+database_position: 3
+has_field_values: null
+display_name: Subtotal
+parent_id: null
+caveats: null
+active: true
+database_type: DOUBLE
+description: The raw, pre-tax cost of the order. Note that this might be different
+  in the future from the product price due to promotions, credits, etc.
+fk_target_field_id: null

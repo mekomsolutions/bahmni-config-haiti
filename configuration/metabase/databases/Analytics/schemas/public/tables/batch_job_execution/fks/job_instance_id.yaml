@@ -1,0 +1,26 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 29
+    nil%: 0.0
+visibility_type: normal
+base_type: type/BigInteger
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/FK
+position: 2
+fingerprint_version: 5
+name: job_instance_id
+database_position: 2
+has_field_values: null
+display_name: Job Instance ID
+parent_id: null
+caveats: null
+active: true
+database_type: int8
+description: null
+fk_target_field_id: /databases/Analytics/schemas/public/tables/batch_job_instance/fields/job_instance_id

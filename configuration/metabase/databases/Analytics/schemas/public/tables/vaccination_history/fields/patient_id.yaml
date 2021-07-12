@@ -1,0 +1,37 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 7
+  - 8
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 7.0
+      q1: 7.0
+      q3: 7.93798079768202
+      max: 8.0
+      sd: 0.5270462766947299
+      avg: 7.444444444444445
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-06T08:00:03.577485Z'
+custom_position: 0
+special_type: type/Category
+position: 0
+fingerprint_version: 5
+name: patient_id
+database_position: 0
+has_field_values: auto-list
+display_name: Patient ID
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

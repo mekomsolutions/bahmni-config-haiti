@@ -1,0 +1,12 @@
+points_of_interest: null
+visibility_type: null
+schema: public
+show_in_getting_started: false
+name: echographie_obstétricale_1
+entity_name: null
+display_name: Echo Graph Ie O Bs Té Tri Cale 1
+caveats: null
+active: true
+entity_type: entity/GenericTable
+field_order: database
+description: null

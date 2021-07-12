@@ -1,0 +1,45 @@
+enable_embedding: false
+visualization_settings: {}
+dataset_query:
+  type: native
+  native:
+    query: |+
+      SELECT  count(DISTINCT person_id) FROM base_obs_query where 1 = 1 AND person_id IN (SELECT person_id FROM base_obs_query where obs_group_id IN (SELECT obs_group_id FROM base_obs_query where concept_name='Vaccinations') and value_coded_name='BCG Vaccination')
+
+      AND person_id IN (SELECT person_id FROM base_obs_query where obs_group_id IN (SELECT obs_group_id FROM base_obs_query where concept_name='Vaccinations') and value_coded_name='Measles Rubella Vaccination')
+
+      AND person_id IN (SELECT person_id FROM base_obs_query where obs_group_id IN (SELECT obs_group_id FROM base_obs_query where concept_name='Vaccinations' and value_coded_name='Oral Polio Vaccination') AND concept_name='Vaccination sequence number' and value_numeric=3)
+
+
+      AND person_id IN (SELECT person_id FROM base_obs_query where obs_group_id IN (SELECT obs_group_id FROM base_obs_query where concept_name='Vaccinations' and value_coded_name='Diphtheria Tetanus Pertusis Vaccination') AND concept_name='Vaccination sequence number' and value_numeric=3);
+
+    template-tags: {}
+  database: /databases/Analytics
+name: Under 1 year fully vaccinated
+archived: false
+collection_position: null
+database_id: /databases/Analytics
+embedding_params: null
+table_id: null
+result_metadata:
+- base_type: type/BigInteger
+  display_name: count
+  name: count
+  special_type: type/Quantity
+  fingerprint:
+    global:
+      distinct-count: 1
+      nil%: 0.0
+    type:
+      type/Number:
+        min: 1.0
+        q1: 1.0
+        q3: 1.0
+        max: 1.0
+        sd: null
+        avg: 1.0
+query_type: native
+cache_ttl: null
+display: scalar
+public_uuid: null
+description: Under 1 year fully vaccinated
