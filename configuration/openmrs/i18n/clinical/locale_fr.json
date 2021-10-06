@@ -437,5 +437,7 @@
   "DASHBOARD_TITLE_WOUND_KEY": "Plaies et Lacérations",
   "MODULE_LABEL_QUEUE_KEY": "Non Urgents",
   "DASHBOARD_TITLE_CONSULTATION_KEY": "Motif de consultation",
-  "DASHBOARD_TITLE_LIFE_STYLE_KEY": "Style de Vle"
+  "DASHBOARD_TITLE_LIFE_STYLE_KEY": "Style de Vle",
+  "DASHBOARD_TITLE_ANTHROPOMETRIC_KEY": "Mesures anthropométriques",
+  "DASHBOARD_TITLE_GYNAECOLOGY_VALUES_KEY": "Gynaecology"
   }
