@@ -58,10 +58,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
- BahmniObservation heightObservation = findByUUID("5090AAAAAAAAAAAAAAAAAAAAAAAAAAAA", observations, null);
- BahmniObservation weightObservation = findByUUID("5089AAAAAAAAAAAAAAAAAAAAAAAAAAAA", observations, null);
+        BahmniObservation heightObservation = find("Taille", observations, null)
+        BahmniObservation weightObservation = find("Poids", observations, null)
         BahmniObservation parent = null;
-
+                               
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
             def heightObs = null, weightObs = null;
             Encounter encounter = Context.getEncounterService().getEncounterByUuid(bahmniEncounterTransaction.getEncounterUuid());
@@ -69,9 +69,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 Set<Obs> latestObsOfEncounter = encounter.getObsAtTopLevel(true);
                 latestObsOfEncounter.each { Obs latestObs ->
                     for (Obs groupMember : latestObs.groupMembers) {
-                        heightObs = heightObs ? heightObs : (groupMember.concept.getUuid().equalsIgnoreCase("5090AAAAAAAAAAAAAAAAAAAAAAAAAAAA") ? groupMember : null);
-                        weightObs = weightObs ? weightObs : (groupMember.concept.getUuid().equalsIgnoreCase("5089AAAAAAAAAAAAAAAAAAAAAAAAAAAA") ? groupMember : null);
-                        
+                        heightObs = heightObs ? heightObs : (groupMember.concept.getName().name.equalsIgnoreCase("Taille") ? groupMember : null);
+                        weightObs = weightObs ? weightObs : (groupMember.concept.getName().name.equalsIgnoreCase("Poids") ? groupMember : null);
                     }
                 }
                 if (isSameObs(heightObservation, heightObs) && isSameObs(weightObservation, weightObs)) {
@@ -79,18 +78,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 }
             }
 
-            //BMI Data
-            BahmniObservation bmiDataObservation = findByUUID("2c5bbbbf-f34d-4590-b624-9f17b75b7f00", observations, null)
-            //BMI
-            BahmniObservation bmiObservation = findByUUID("c367d9ee-3f10-11e4-adec-0800271c1b75", bmiDataObservation ? [bmiDataObservation] : [], null)
-            //BMI Abnormal
-            BahmniObservation bmiAbnormalObservation = findByUUID("c3843f1d-9835-47e8-842b-d51e57781585", bmiDataObservation ? [bmiDataObservation]: [], null)
-            //BMI Status Data
-            BahmniObservation bmiStatusDataObservation = findByUUID("80ef57a5-0d0c-48de-acdd-19e026c890b5", observations, null)
-            //BMI Status
-            BahmniObservation bmiStatusObservation = findByUUID("c368694c-3f10-11e4-adec-0800271c1b75", bmiStatusDataObservation ? [bmiStatusDataObservation] : [], null)
-            //BMI Status Abnormal
-            BahmniObservation bmiStatusAbnormalObservation = findByUUID("afd34a0d-ca7c-4f31-bd5a-4f1fa98100e1", bmiStatusDataObservation ? [bmiStatusDataObservation]: [], null)
+            BahmniObservation bmiDataObservation = find("BMI Data", observations, null)
+            BahmniObservation bmiObservation = find("BMI", bmiDataObservation ? [bmiDataObservation] : [], null)
+            BahmniObservation bmiAbnormalObservation = find("BMI Abnormal", bmiDataObservation ? [bmiDataObservation]: [], null)
+
+            BahmniObservation bmiStatusDataObservation = find("BMI Status Data", observations, null)
+            BahmniObservation bmiStatusObservation = find("BMI Status", bmiStatusDataObservation ? [bmiStatusDataObservation] : [], null)
+            BahmniObservation bmiStatusAbnormalObservation = find("BMI Status Abnormal", bmiStatusDataObservation ? [bmiStatusDataObservation]: [], null)
 
             Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
             def patientAgeInMonthsAsOfEncounter = Months.monthsBetween(new LocalDate(patient.getBirthdate()), new LocalDate(nowAsOfEncounter)).getMonths()
@@ -107,8 +101,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            def previousHeightValue = fetchLatestValueByUUID("5090AAAAAAAAAAAAAAAAAAAAAAAAAAAA", bahmniEncounterTransaction.getPatientUuid(), heightObservation, nowAsOfEncounter)
-            def previousWeightValue = fetchLatestValueByUUID("5089AAAAAAAAAAAAAAAAAAAAAAAAAAAA", bahmniEncounterTransaction.getPatientUuid(), weightObservation, nowAsOfEncounter)
+            def previousHeightValue = fetchLatestValue("Taille", bahmniEncounterTransaction.getPatientUuid(), heightObservation, nowAsOfEncounter)
+            def previousWeightValue = fetchLatestValue("Poids", bahmniEncounterTransaction.getPatientUuid(), weightObservation, nowAsOfEncounter)
 
             Double height = hasValue(heightObservation) && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
             Double weight = hasValue(weightObservation) && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
@@ -321,33 +315,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     }
 
-    static Double fetchLatestValueByUUID(String conceptUuid, String patientUuid, BahmniObservation excludeObs, Date tillDate) {
-        SessionFactory sessionFactory = Context.getRegisteredComponents(SessionFactory.class).get(0)
-        def excludedObsIsSaved = excludeObs != null && excludeObs.uuid != null
-        String excludeObsClause = excludedObsIsSaved ? " and obs.uuid != :excludeObsUuid" : ""
-        Query queryToGetObservations = sessionFactory.getCurrentSession()
-                .createQuery("select obs " +
-                " from Obs as obs " +
-                " where obs.person.uuid = :patientUuid " +
-                " and obs.concept.uuid = :conceptUuid " +
-                " and obs.voided = false" +
-                " and obs.obsDatetime <= :till" +
-                excludeObsClause +
-                " order by obs.obsDatetime desc ");
-        queryToGetObservations.setString("patientUuid", patientUuid);
-        queryToGetObservations.setParameterList("conceptUuid", conceptUuid);
-        queryToGetObservations.setParameter("till", tillDate);
-        if (excludedObsIsSaved) {
-            queryToGetObservations.setString("excludeObsUuid", excludeObs.uuid)
-        }
-        queryToGetObservations.setMaxResults(1);
-        List<Obs> observations = queryToGetObservations.list();
-        if (observations.size() > 0) {
-            return observations.get(0).getValueNumeric();
-        }
-        return null
-    }
-
     static BahmniObservation find(String conceptName, Collection<BahmniObservation> observations, BahmniObservation parent) {
         for (BahmniObservation observation : observations) {
             if (conceptName.equalsIgnoreCase(observation.getConcept().getName())) {
@@ -355,18 +322,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return observation;
             }
             BahmniObservation matchingObservation = find(conceptName, observation.getGroupMembers(), observation)
-            if (matchingObservation) return matchingObservation;
-        }
-        return null
-    }
-
-    static BahmniObservation findByUUID(String uuid, Collection<BahmniObservation> observations, BahmniObservation parent) {
-        for (BahmniObservation observation : observations) {
-            if (uuid.equalsIgnoreCase(observation.getConcept().getUuid())) {
-                obsParentMap.put(observation, parent);
-                return observation;
-            }
-            BahmniObservation matchingObservation = find(uuid, observation.getGroupMembers(), observation)
             if (matchingObservation) return matchingObservation;
         }
         return null
