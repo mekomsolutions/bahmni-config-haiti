@@ -374,7 +374,7 @@ angular.module('bahmni.common.displaycontrol.custom')
 
     this.getAllInvoices = function(filters, representation) {
       var salesInvoiceFilter = {
-        "field": "type",
+        "field": "move_type",
         "comparison": "=",
         "value": "out_invoice"
       }
@@ -427,26 +427,32 @@ function billingStatusController($scope, $element, erpService, visitService, app
 
   var invoicesFilters = [];
   var ordersFilters = [];
+  var patientId;
 
   var lines = [];
   $scope.orderToInvoiceMap = {};
 
   var retrieveErpPartner =  function() {
-      return erpService.getPartnerByUuid($scope.patient.uuid, $scope.config.patientUuidFieldName).then(function(response) {
-        var patientFilter = {
-          "field": "partner_id",
-          "comparison": "=",
-          "value": response.data[0].id
+      return erpService.getPartnerByUuid($scope.patient.uuid, "ref").then(function(response) {
+        if (response.data[0]) {
+          patientId = response.data[0].id;
+          var patientFilter = {
+            "field": "partner_id",
+            "comparison": "=",
+            "value": patientId
+          }
+          // Initialize the filters with the patient filter.
+          invoicesFilters = [patientFilter];
+          ordersFilters = [patientFilter];
         }
-        // Initialize the filters with the patient filter.
-        invoicesFilters = [patientFilter];
-        ordersFilters = [patientFilter];
       })
   }
 
   var getErpPartner = function() {
       return $q.all([retrieveErpPartner()]).then(function() {
-        getOrdersAndInvoices();
+        if (patientId) {
+          getOrdersAndInvoices();
+        }
       })
   }
 
