@@ -62,7 +62,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "forms",
         "extensionParams": {
-            "formName": "Anthropometric Measure",
+            "formName": "Anthropométrie",
             "conceptNames": ["Weight","Height", "Blood Pressure Set", "Pulse", "Temperature", "Respiratory Rate", "Oxygen Saturation", "Mid-Upper Arm Circumference"],
             "required":true,
             "showLatest": true
@@ -75,7 +75,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "forms",
         "extensionParams": {
-            "formName": "Mode of Arrival",
+            "formName": "Moyen de transport",
             "conceptNames": ["Weight","Height", "Blood Pressure Set", "Pulse", "Temperature", "Respiratory Rate", "Oxygen Saturation", "Mid-Upper Arm Circumference"],
             "required":true,
             "showLatest": true
