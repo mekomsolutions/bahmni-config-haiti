@@ -545,8 +545,7 @@ function billingStatusController($scope, $element, erpService, visitService, app
         } else if (orderLine.qty_invoiced > 0 && orderLine.qty_to_invoice > 0) {
           // PARTIALLY_INVOICED
           tags.push(PARTIALLY_INVOICED);
-        } else if (orderLine.qty_to_invoice <= 0) {
-          // "orderLine.qty_to_invoice <= 0" for some reason the qty_to_invoice is negative.
+        } else if (orderLine.qty_to_invoice == 0) {
           // FULLY_INVOICED
           tags.push(FULLY_INVOICED);
         }
@@ -570,7 +569,7 @@ function billingStatusController($scope, $element, erpService, visitService, app
       invoice.invoice_lines.forEach(function(invoiceLine) {
         var tags = [];
         tags.push(INVOICE)
-        if (invoice.state == "paid") {
+        if (invoice.state == "posted") {
           tags.push(PAID);
         } else {
           tags.push(NOT_PAID);
