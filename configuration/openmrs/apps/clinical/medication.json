@@ -166,7 +166,7 @@
             "route": "Rectal"
           },
           "Granules": {
-            "doseUnits": "Unite(s)",
+            "doseUnits": "Sachet(s)",
             "route": "Oral"
           }
         }
