@@ -476,7 +476,8 @@ function billingStatusController($scope, $element, erpService, visitService, app
     "date",
     "state",
     "date_due",
-    "name"
+    "name",
+    "payment_state"
   ]
 
   var retrieveErpInvoices = function() {
@@ -570,7 +571,7 @@ function billingStatusController($scope, $element, erpService, visitService, app
       invoice.invoice_lines.filter(invoiceLine => !invoiceLine.exclude_from_invoice_tab).forEach(function(invoiceLine) {
         var tags = [];
         tags.push(INVOICE)
-        if (invoice.state == "posted") {
+        if (invoice.payment_state == "paid") {
           tags.push(PAID);
         } else {
           tags.push(NOT_PAID);
