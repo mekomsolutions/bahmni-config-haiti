@@ -476,7 +476,8 @@ function billingStatusController($scope, $element, erpService, visitService, app
     "date",
     "state",
     "date_due",
-    "number"
+    "name",
+    "payment_state"
   ]
 
   var retrieveErpInvoices = function() {
@@ -549,6 +550,7 @@ function billingStatusController($scope, $element, erpService, visitService, app
           // FULLY_INVOICED
           tags.push(FULLY_INVOICED);
         }
+        var orderLineDsplay = orderLine.product_id[1] + " - (" + orderLine.product_uom_qty + " " + orderLine.product_uom[1] + ")";
         orderLinesWithTags.push(new BillingLine(
           orderLine.id,
           order.date_order,
@@ -556,7 +558,7 @@ function billingStatusController($scope, $element, erpService, visitService, app
           order.name,
           orderLine[orderExternalIdFieldName],
           tags,
-          orderLine.display_name
+          orderLineDsplay
         ))
       })
     })
@@ -566,10 +568,10 @@ function billingStatusController($scope, $element, erpService, visitService, app
   var setTagsToInvoiceLines = function(invoices) {
     var invoiceLinesWithTags = []
     invoices.forEach(function(invoice) {
-      invoice.invoice_lines.forEach(function(invoiceLine) {
+      invoice.invoice_lines.filter(invoiceLine => !invoiceLine.exclude_from_invoice_tab).forEach(function(invoiceLine) {
         var tags = [];
         tags.push(INVOICE)
-        if (invoice.state == "posted") {
+        if (invoice.payment_state == "paid") {
           tags.push(PAID);
         } else {
           tags.push(NOT_PAID);
@@ -589,14 +591,15 @@ function billingStatusController($scope, $element, erpService, visitService, app
             })
           })
         };
+        var invoiceLineDsplay = invoiceLine.name + " - (" + invoiceLine.quantity + " " + invoiceLine.product_uom_id[1] + ")";
         invoiceLinesWithTags.push(new BillingLine(
           invoiceLine.id,
           invoice.date,
           null,
-          invoice.number,
+          invoice.name,
           orderUuid,
           tags,
-          invoiceLine.display_name
+          invoiceLineDsplay
         ))
       })
     });
