@@ -3,6 +3,7 @@
   "tabConfig": {
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
+        "allowOnlyCodedDrugs":true,
         "defaultDurationUnit": "Jour(s)",
         "hideOrderSet": false,
         "defaultInstructions": "As directed",
