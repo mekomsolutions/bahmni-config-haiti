@@ -417,6 +417,8 @@ function billingStatusController($scope, $element, erpService, visitService, app
   const OVERDUE = "OVERDUE"
   const NOT_OVERDUE = "NOT_OVERDUE"
 
+  const CANCELLED = "CANCELLED"
+
   const retireLinesConditions = $scope.config.retireLinesConditions;
   const nonApprovedConditions = $scope.config.nonApprovedConditions;
   const approvedConditions = $scope.config.approvedConditions;
@@ -462,7 +464,8 @@ function billingStatusController($scope, $element, erpService, visitService, app
     "date_order",
     "name",
     "number",
-    orderExternalIdFieldName
+    orderExternalIdFieldName,
+    "state"
   ]
 
   var retrieveErpOrders = function() {
@@ -538,8 +541,12 @@ function billingStatusController($scope, $element, erpService, visitService, app
     var orderLinesWithTags = []
     orders.forEach(function(order) {
       order.order_lines.forEach(function(orderLine) {
-        // NON INVOICED
         var tags = []
+        // CANCELLED
+        if (orderLine.state == "cancel") {
+            tags.push(CANCELLED);
+        }
+        // NON INVOICED
         tags.push(ORDER);
         if (orderLine.qty_invoiced == 0) {
           tags.push(NON_INVOICED);
@@ -629,7 +636,7 @@ angular.module('bahmni.common.displaycontrol.custom')
     }
   }])
 
-function billingStatusVisitController($scope, visitService, appService, $q) {
+function billingStatusDayController($scope, visitService, appService, $q) {
 
   var visits = [];
 
@@ -664,6 +671,26 @@ function billingStatusVisitController($scope, visitService, appService, $q) {
     return groupedLines;
   }
 
+  var groupLinesByDay = function(linesToGroup) {
+    var groupedLines = {};
+    linesToGroup.forEach(function(line) {
+
+    if (!groupedLines[line.date.substring(0,10)]) {
+        groupedLines[line.date.substring(0,10)] = {
+          visit: line.visit,
+          date: line.date.substring(0,10),
+          approved: true,
+          lines: [],
+        };
+    };
+    
+    groupedLines[line.date.substring(0,10)].lines.push(line)
+    groupedLines[line.date.substring(0,10)].approved = groupedLines[line.date.substring(0,10)].approved && line.approved
+    
+    })
+    return groupedLines;
+  }
+
   var getAllVisitsWithOrders = function() {
     const customRepresentation = Bahmni.ConceptSet.CustomRepresentationBuilder.build(['uuid', 'startDatetime', 'stopDatetime', 'encounters:(orders:(uuid))']);
     return visitService.getVisits($scope.patient.uuid, "custom:" + customRepresentation).then(function(response) {
@@ -687,17 +714,17 @@ function billingStatusVisitController($scope, visitService, appService, $q) {
   var init = $q.all([getAllVisitsWithOrders()])
   init.then(function() {
     $scope.lines = setVisitToLines($scope.lines, visits);
-    $scope.groupedlines = groupLinesByVisit($scope.lines);
+    $scope.groupedlines = groupLinesByDay($scope.lines);
   })
 
   $scope.initialization = init;
 }
 
 angular.module('bahmni.common.displaycontrol.custom')
-  .directive('billingStatusVisit', ['openMRSVisitService', 'appService', 'spinner', '$q', function(visitService, appService, spinner, $q) {
+  .directive('billingStatusDay', ['openMRSVisitService', 'appService', 'spinner', '$q', function(visitService, appService, spinner, $q) {
 
     var link = function($scope, $element) {
-      $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/billingStatusVisit.html";
+      $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/billingStatusDay.html";
       spinner.forPromise($scope.initialization, $element);
     }
 
@@ -708,7 +735,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         lines: '=lines',
         patient: '=patient'
       },
-      controller: ['$scope', 'openMRSVisitService', 'appService', '$q', billingStatusVisitController],
+      controller: ['$scope', 'openMRSVisitService', 'appService', '$q', billingStatusDayController],
       template: '<div><ng-include src="contentUrl" /></div>'
     }
   }])
