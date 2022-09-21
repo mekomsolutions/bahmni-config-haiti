@@ -6,10 +6,10 @@ CREATE TABLE temporary_table as (
           write_date
       ) ix,
       write_date,
-      cost,
+      unit_cost,
       product_id
     FROM
-      product_price_history
+      stock_valuation_layer
   ),
   RangedCosts AS (
     SELECT
@@ -19,7 +19,7 @@ CREATE TABLE temporary_table as (
       CAST(
         COALESCE(IC2.write_date, now()) AS timestamp without time zone
       ) DateTo,
-      IC.cost,
+      IC.unit_cost,
       IC.product_id
     FROM
       IndexedCosts IC
@@ -32,9 +32,8 @@ CREATE TABLE temporary_table as (
     "order"."date_order" AS "date_order",
     "public"."sale_order_line"."name" AS "name",
     "public"."sale_order_line"."product_uom_qty" AS "product_uom_qty",
-    "product_uom"."name" AS "unit_of_measure",
+    "uom_uom"."name" AS "unit_of_measure",
     "public"."sale_order_line"."price_unit" AS "unit_price",
-    RC.cost as "cost_at_date",
     "currency"."name" AS "currency_name",
     "price_list"."name" AS "price_list_name",
     "public"."sale_order_line"."qty_to_invoice" AS "qty_to_invoice",
@@ -46,24 +45,19 @@ CREATE TABLE temporary_table as (
     "public"."sale_order_line"."price_reduce_taxinc" AS "price_reduce_taxinc",
     "public"."sale_order_line"."price_total" AS "price_total",
     "public"."sale_order_line"."invoice_status" AS "invoice_status",
-    "public"."sale_order_line"."expiry_date" AS "expiry_date",
-    "public"."sale_order_line"."dispensed" AS "dispensed",
     "order"."invoice_status" AS "order_invoice_status",
-    "order"."care_setting" AS "care_setting",
-    "order"."discount_type" AS "discount_type",
-    "order"."discount" AS "order_discount",
-    "public"."sale_order_line"."external_order_id" AS "order_uuid",
     "order_partner"."name" AS "partner_name",
     "order_partner"."display_name" AS "partner_display_name",
-    "order_partner"."uuid" AS "partner_uuid",
-    "product"."uuid" AS "product_uuid"
+    "order_partner"."ref" AS "partner_uuid",
+    "external_id"."name" AS "product_uuid"
   FROM
     "public"."sale_order_line"
     LEFT JOIN "public"."sale_order" "order" ON "public"."sale_order_line"."order_id" = "order"."id"
     LEFT JOIN "public"."res_partner" "order_partner" ON "public"."sale_order_line"."order_partner_id" = "order_partner"."id"
-    LEFT JOIN "public"."product_uom" "product_uom" ON "public"."sale_order_line"."product_uom" = "product_uom"."id"
+    LEFT JOIN "public"."uom_uom" "uom_uom" ON "public"."sale_order_line"."product_uom" = "uom_uom"."id"
     LEFT JOIN "public"."res_currency" "currency" ON "public"."sale_order_line"."currency_id" = "currency"."id"
     LEFT JOIN "public"."product_product" "product" ON "public"."sale_order_line"."product_id" = "product"."id"
+    LEFT JOIN "public"."ir_model_data" "external_id" ON "public"."sale_order_line"."product_id" = "external_id"."res_id" AND "external_id"."model" = 'product.product' 
     LEFT OUTER JOIN "public"."product_pricelist" "price_list" ON "order"."pricelist_id" = "price_list"."id"
     LEFT OUTER JOIN "public"."res_company" "company" ON "public"."sale_order_line"."company_id" = "company"."id"
     LEFT OUTER JOIN "public"."account_payment_term" "payment_term" ON "order"."payment_term_id" = "payment_term"."id"
