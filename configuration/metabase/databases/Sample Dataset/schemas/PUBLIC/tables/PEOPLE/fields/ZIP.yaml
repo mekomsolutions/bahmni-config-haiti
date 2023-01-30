@@ -1,0 +1,33 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2234
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 5.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/ZipCode
+position: 10
+fingerprint_version: 5
+name: ZIP
+database_position: 10
+has_field_values: null
+display_name: Zip
+parent_id: null
+caveats: null
+active: true
+database_type: CHAR
+description: The postal code of the account’s billing address
+fk_target_field_id: null

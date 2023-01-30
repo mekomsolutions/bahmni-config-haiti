@@ -1,0 +1,28 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 929
+    nil%: 0.0
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/FK
+position: 1
+fingerprint_version: 5
+name: USER_ID
+database_position: 1
+has_field_values: null
+display_name: User ID
+parent_id: null
+caveats: null
+active: true
+database_type: INTEGER
+description: The id of the user who made this order. Note that in some cases where
+  an order was created on behalf of a customer who phoned the order in, this might
+  be the employee who handled the request.
+fk_target_field_id: /databases/Sample Dataset/schemas/PUBLIC/tables/PEOPLE/fields/ID

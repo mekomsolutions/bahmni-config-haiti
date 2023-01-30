@@ -1,0 +1,22 @@
+points_of_interest: null
+cache_field_values_schedule: 0 0 0 * * ? *
+timezone: UTC
+metadata_sync_schedule: 0 0 * * * ? *
+is_sample: false
+name: Analytics
+is_on_demand: false
+engine: postgres
+details:
+  host: postgresql
+  port: 5432
+  dbname: analytics
+  user: analytics
+  password: password
+  ssl: false
+  additional-options: null
+  tunnel-enabled: false
+is_full_sync: true
+auto_run_queries: true
+caveats: null
+options: null
+description: null
