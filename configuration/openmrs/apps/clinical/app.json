@@ -25,6 +25,7 @@
     "config": {
         "enablePACSOptions":true,
         "quickPrints":false,
+        "conceptName": "Poids",
         "networkConnectivity" : {
             "showNetworkStatusMessage": true,
             "networkStatusCheckInterval": 5000,
