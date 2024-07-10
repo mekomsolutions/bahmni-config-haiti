@@ -464,6 +464,6 @@
   "MODULE_LABEL_CHIRURGIE_KEY": "Chirurgie" ,
   "MODULE_LABEL_ANEMIE_FALCIFORME_KEY": "Anemie falciforme" ,
   "MODULE_LABEL_CARDIOLOGIE_KEY": "Cardiologie",
-  "MODULE_LABEL_FAMILY_PLANNING_COMMUNITY_KEY": "Vaccination infantile communautaire",
-  "MODULE_LABEL_INFANT_VACCINATION_COMMUNITY_KEY": "Family Planning Community"
+  "MODULE_LABEL_FAMILY_PLANNING_COMMUNITY_KEY": "Planification familiale communautaire",
+  "MODULE_LABEL_INFANT_VACCINATION_COMMUNITY_KEY": "Vaccination infantile communautaire"
   }
