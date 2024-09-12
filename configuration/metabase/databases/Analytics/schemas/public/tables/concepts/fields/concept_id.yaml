@@ -1,0 +1,34 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2625
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 1.0
+      q1: 839.187474326791
+      q3: 2025.3857657555247
+      max: 2628.0
+      sd: 723.1439259696249
+      avg: 1411.2469708144556
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: null
+position: 0
+fingerprint_version: 5
+name: concept_id
+database_position: 0
+has_field_values: null
+display_name: Concept ID
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

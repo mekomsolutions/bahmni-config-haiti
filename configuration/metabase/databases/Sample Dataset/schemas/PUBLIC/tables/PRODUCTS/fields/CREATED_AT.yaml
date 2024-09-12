@@ -1,0 +1,30 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 200
+    nil%: 0.0
+  type:
+    type/DateTime:
+      earliest: '2016-04-26T19:29:55.147Z'
+      latest: '2019-04-15T13:34:19.931Z'
+visibility_type: normal
+base_type: type/DateTime
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/CreationTimestamp
+position: 7
+fingerprint_version: 5
+name: CREATED_AT
+database_position: 7
+has_field_values: null
+display_name: Created At
+parent_id: null
+caveats: null
+active: true
+database_type: TIMESTAMP
+description: The date the product was added to our catalog.
+fk_target_field_id: null

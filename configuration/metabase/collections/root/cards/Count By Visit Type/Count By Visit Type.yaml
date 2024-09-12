@@ -1,0 +1,65 @@
+enable_embedding: false
+visualization_settings:
+  graph.show_values: true
+  stackable.stack_type: null
+  stackable.stack_display: bar
+  series_settings:
+    count:
+      color: '#509EE3'
+  graph.dimensions:
+  - visit_type
+  graph.metrics:
+  - count
+dataset_query:
+  type: query
+  query:
+    source-table: /databases/Analytics/schemas/public/tables/visits
+    aggregation:
+    - - count
+    breakout:
+    - - field-id
+      - /databases/Analytics/schemas/public/tables/visits/fields/visit_type
+  database: /databases/Analytics
+name: Count By Visit Type
+archived: false
+collection_position: null
+database_id: /databases/Analytics
+embedding_params: null
+table_id: /databases/Analytics/schemas/public/tables/visits
+result_metadata:
+- base_type: type/Text
+  display_name: Visit Type
+  name: visit_type
+  special_type: type/Category
+  fingerprint:
+    global:
+      distinct-count: 2
+      nil%: 0.0
+    type:
+      type/Text:
+        percent-json: 0.0
+        percent-url: 0.0
+        percent-email: 0.0
+        percent-state: 0.0
+        average-length: 13.0
+- base_type: type/BigInteger
+  display_name: Count
+  name: count
+  special_type: type/Quantity
+  fingerprint:
+    global:
+      distinct-count: 1
+      nil%: 0.0
+    type:
+      type/Number:
+        min: 1.0
+        q1: 1.0
+        q3: 1.0
+        max: 1.0
+        sd: null
+        avg: 1.0
+query_type: query
+cache_ttl: null
+display: bar
+public_uuid: null
+description: Count By Visit Type

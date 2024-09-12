@@ -1,0 +1,40 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Affiliate
+  - Facebook
+  - Google
+  - Organic
+  - Twitter
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 5
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 7.4084
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Source
+position: 8
+fingerprint_version: 5
+name: SOURCE
+database_position: 8
+has_field_values: auto-list
+display_name: Source
+parent_id: null
+caveats: null
+active: true
+database_type: VARCHAR
+description: 'The channel through which we acquired this user. Valid values include:
+  Affiliate, Facebook, Google, Organic and Twitter'
+fk_target_field_id: null

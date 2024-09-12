@@ -1,0 +1,30 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 3
+    nil%: 0.7777777777777778
+  type:
+    type/DateTime:
+      earliest: '2021-07-05'
+      latest: '2021-07-06'
+visibility_type: normal
+base_type: type/Date
+last_analyzed: '2021-07-06T08:00:03.577485Z'
+custom_position: 0
+special_type: null
+position: 17
+fingerprint_version: 5
+name: vaccination_date
+database_position: 17
+has_field_values: null
+display_name: Vaccination Date
+parent_id: null
+caveats: null
+active: true
+database_type: date
+description: null
+fk_target_field_id: null
