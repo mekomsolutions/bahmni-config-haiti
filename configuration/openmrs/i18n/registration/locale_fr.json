@@ -110,7 +110,7 @@
   "REGISTRATION_SAVE_ACCESS_KEY": "s",
   "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY": "r",
   "REGISTRATION_SEARCH_CONFIG_KEY": "<u>R</u>echerche",
-  "REGISTRATION_START_VISIT": "Démarrer une visite {{ visitType }}",
+  "REGISTRATION_START_VISIT": "Démarrer une visite: {{ visitType }}",
   "REGISTRATION_TITLE_ADDITIONAL_PATIENT": "Information complémentaires",
   "REGISTRATION_TITLE_KEY": "Inscription",
   "REGISTRATION_TITLE_RELATIONSHIPS": "Relations/Liens de parenté",
