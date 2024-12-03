@@ -1,0 +1,36 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - a81b0fd8-752e-4bf6-996c-4549819cc627
+  - beb3cea7-0057-4e6f-86eb-6659352e29f8
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 36.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T14:00:03.870804Z'
+custom_position: 0
+special_type: type/Category
+position: 21
+fingerprint_version: 5
+name: person_uuid
+database_position: 21
+has_field_values: auto-list
+display_name: Person UUID
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null

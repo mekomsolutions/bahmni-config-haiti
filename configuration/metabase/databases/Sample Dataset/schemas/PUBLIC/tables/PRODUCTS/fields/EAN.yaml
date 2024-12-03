@@ -1,0 +1,34 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 200
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 13.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: null
+position: 1
+fingerprint_version: 5
+name: EAN
+database_position: 1
+has_field_values: null
+display_name: Ean
+parent_id: null
+caveats: null
+active: true
+database_type: CHAR
+description: The international article number. A 13 digit number uniquely identifying
+  the product.
+fk_target_field_id: null

@@ -1,0 +1,53 @@
+points_of_interest: null
+enable_embedding: false
+dashboard_cards:
+- sizeX: 4
+  series: []
+  col: 0
+  parameter_mappings: []
+  card_id: /collections/root/cards/Diabetes Count
+  visualization_settings: {}
+  sizeY: 4
+  row: 0
+- sizeX: 4
+  series: []
+  col: 4
+  parameter_mappings: []
+  card_id: /collections/root/cards/Hypertensive Count
+  visualization_settings: {}
+  sizeY: 4
+  row: 0
+- sizeX: 4
+  series: []
+  col: 8
+  parameter_mappings: []
+  card_id: /collections/root/cards/Asthma Count
+  visualization_settings: {}
+  sizeY: 4
+  row: 0
+- sizeX: 4
+  series: []
+  col: 12
+  parameter_mappings: []
+  card_id: /collections/root/cards/Count By Visit Type
+  visualization_settings: {}
+  sizeY: 4
+  row: 0
+- sizeX: 4
+  series: []
+  col: 0
+  parameter_mappings: []
+  card_id: /collections/root/cards/Under 1 year fully vaccinated
+  visualization_settings: {}
+  sizeY: 4
+  row: 4
+show_in_getting_started: false
+position: null
+name: General
+archived: false
+collection_position: null
+embedding_params: null
+public_uuid: null
+caveats: null
+parameters: []
+description: General

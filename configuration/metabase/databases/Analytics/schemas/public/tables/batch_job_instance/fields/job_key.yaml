@@ -1,0 +1,33 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 29
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 32.0
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Category
+position: 3
+fingerprint_version: 5
+name: job_key
+database_position: 3
+has_field_values: null
+display_name: Job Key
+parent_id: null
+caveats: null
+active: true
+database_type: varchar
+description: null
+fk_target_field_id: null

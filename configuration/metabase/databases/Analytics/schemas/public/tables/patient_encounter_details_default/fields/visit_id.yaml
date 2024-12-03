@@ -1,0 +1,37 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 1
+  - 2
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 1.0
+      q1: 1.0
+      q3: 2.0
+      max: 2.0
+      sd: 0.7071067811865476
+      avg: 1.5
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T14:00:03.870804Z'
+custom_position: 0
+special_type: type/Category
+position: 1
+fingerprint_version: 5
+name: visit_id
+database_position: 1
+has_field_values: auto-list
+display_name: Visit ID
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

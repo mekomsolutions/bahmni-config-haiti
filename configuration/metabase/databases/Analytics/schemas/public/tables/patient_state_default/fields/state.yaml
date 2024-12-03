@@ -1,0 +1,23 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint: null
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: null
+custom_position: 0
+special_type: null
+position: 5
+fingerprint_version: 0
+name: state
+database_position: 5
+has_field_values: null
+display_name: State
+parent_id: null
+caveats: null
+active: true
+database_type: int4
+description: null
+fk_target_field_id: null

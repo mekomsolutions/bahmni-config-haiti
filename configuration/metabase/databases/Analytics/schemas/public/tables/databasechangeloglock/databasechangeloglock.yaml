@@ -1,0 +1,12 @@
+points_of_interest: null
+visibility_type: cruft
+schema: public
+show_in_getting_started: false
+name: databasechangeloglock
+entity_name: null
+display_name: Database Changelog Lock
+caveats: null
+active: true
+entity_type: null
+field_order: database
+description: null

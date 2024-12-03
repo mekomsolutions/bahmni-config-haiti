@@ -1,0 +1,36 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 797
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 0.0
+      q1: 2.273340386603857
+      q3: 5.337275338216307
+      max: 11.12
+      sd: 2.3206651358900316
+      avg: 3.8722100000000004
+visibility_type: normal
+base_type: type/Float
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: null
+position: 4
+fingerprint_version: 5
+name: TAX
+database_position: 4
+has_field_values: null
+display_name: Tax
+parent_id: null
+caveats: null
+active: true
+database_type: DOUBLE
+description: This is the amount of local and federal taxes that are collected on the
+  purchase. Note that other governmental fees on some products are not included here,
+  but instead are accounted for in the subtotal.
+fk_target_field_id: null

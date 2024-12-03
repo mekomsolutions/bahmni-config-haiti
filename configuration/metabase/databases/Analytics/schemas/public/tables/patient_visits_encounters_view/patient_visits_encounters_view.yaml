@@ -1,0 +1,12 @@
+points_of_interest: null
+visibility_type: null
+schema: public
+show_in_getting_started: false
+name: patient_visits_encounters_view
+entity_name: null
+display_name: Patient Visits Encounters View
+caveats: null
+active: true
+entity_type: entity/GenericTable
+field_order: database
+description: null

@@ -1,0 +1,40 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 5
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 1.0
+      q1: 3.54744353181696
+      q3: 4.764807071650455
+      max: 5.0
+      sd: 1.0443899855660577
+      avg: 3.987410071942446
+visibility_type: normal
+base_type: type/Integer
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Score
+position: 3
+fingerprint_version: 5
+name: RATING
+database_position: 3
+has_field_values: auto-list
+display_name: Rating
+parent_id: null
+caveats: null
+active: true
+database_type: SMALLINT
+description: The rating (on a scale of 1-5) the user left.
+fk_target_field_id: null

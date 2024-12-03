@@ -1,0 +1,35 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2491
+    nil%: 0.0
+  type:
+    type/Number:
+      min: 25.775827
+      q1: 35.302705923023126
+      q3: 43.773802584662
+      max: 70.6355001
+      sd: 6.390832341883712
+      avg: 39.87934670484002
+visibility_type: normal
+base_type: type/Float
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Latitude
+position: 11
+fingerprint_version: 5
+name: LATITUDE
+database_position: 11
+has_field_values: null
+display_name: Latitude
+parent_id: null
+caveats: null
+active: true
+database_type: DOUBLE
+description: This is the latitude of the user on sign-up. It might be updated in the
+  future to the last seen location.
+fk_target_field_id: null

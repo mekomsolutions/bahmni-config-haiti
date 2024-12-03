@@ -1,0 +1,51 @@
+enable_embedding: false
+visualization_settings: {}
+dataset_query:
+  database: /databases/Analytics
+  query:
+    source-table: /databases/Analytics/schemas/public/tables/visit_diagnoses
+    filter:
+    - =
+    - - field-id
+      - /databases/Analytics/schemas/public/tables/visit_diagnoses/fields/coded_diagnosis
+    - Asthma exacerbation (J45.9)
+    - Moderate persistent asthma (J45.9)
+    - Allergic asthma (J45.0)
+    - Mild persistent asthma (J45.9)
+    - Severe persistent asthma (J45.9)
+    - Asthma (J45.9)
+    - Mild intermittent asthma (J45.9)
+    - Status Asthmaticus (J46)
+    aggregation:
+    - - distinct
+      - - field-id
+        - /databases/Analytics/schemas/public/tables/visit_diagnoses/fields/patient_id
+  type: query
+name: Asthma Count
+archived: false
+collection_position: null
+database_id: /databases/Analytics
+embedding_params: null
+table_id: /databases/Analytics/schemas/public/tables/visit_diagnoses
+result_metadata:
+- base_type: type/BigInteger
+  display_name: Distinct values of Patient ID
+  name: count
+  special_type: type/Quantity
+  fingerprint:
+    global:
+      distinct-count: 1
+      nil%: 0.0
+    type:
+      type/Number:
+        min: 1.0
+        q1: 1.0
+        q3: 1.0
+        max: 1.0
+        sd: null
+        avg: 1.0
+query_type: query
+cache_ttl: null
+display: scalar
+public_uuid: null
+description: Asthma Count

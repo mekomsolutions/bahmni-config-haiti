@@ -1,0 +1,33 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 2499
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 13.532
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Name
+position: 4
+fingerprint_version: 5
+name: NAME
+database_position: 4
+has_field_values: null
+display_name: Name
+parent_id: null
+caveats: null
+active: true
+database_type: VARCHAR
+description: The name of the user who owns an account
+fk_target_field_id: null

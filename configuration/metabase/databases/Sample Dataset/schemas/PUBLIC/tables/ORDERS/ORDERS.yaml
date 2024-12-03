@@ -1,0 +1,12 @@
+points_of_interest: null
+visibility_type: null
+schema: PUBLIC
+show_in_getting_started: false
+name: ORDERS
+entity_name: null
+display_name: Orders
+caveats: null
+active: true
+entity_type: entity/TransactionTable
+field_order: database
+description: This is a confirmed order for a product from a user.

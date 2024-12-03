@@ -1,0 +1,34 @@
+points_of_interest: null
+preview_display: true
+values:
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 701
+    nil%: 0.898
+  type:
+    type/Number:
+      min: 0.17088996672584322
+      q1: 2.9786226681458743
+      q3: 7.338187788658235
+      max: 61.69684269960571
+      sd: 3.053663125001991
+      avg: 5.161255547580326
+visibility_type: normal
+base_type: type/Float
+last_analyzed: '2021-07-05T12:47:42.993538Z'
+custom_position: 0
+special_type: type/Discount
+position: 6
+fingerprint_version: 5
+name: DISCOUNT
+database_position: 6
+has_field_values: null
+display_name: Discount
+parent_id: null
+caveats: null
+active: true
+database_type: DOUBLE
+description: Discount amount.
+fk_target_field_id: null

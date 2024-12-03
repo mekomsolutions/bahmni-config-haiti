@@ -1,0 +1,40 @@
+points_of_interest: null
+preview_display: true
+values:
+  values:
+  - Adresse
+  - Commune
+  - Département
+  - Maison/Bâtiment
+  - Pays
+  - Section de commune
+  human_readable_values: []
+settings: null
+fingerprint:
+  global:
+    distinct-count: 6
+    nil%: 0.0
+  type:
+    type/Text:
+      percent-json: 0.0
+      percent-url: 0.0
+      percent-email: 0.0
+      percent-state: 0.0
+      average-length: 10.333333333333334
+visibility_type: normal
+base_type: type/Text
+last_analyzed: '2021-07-05T13:07:22.687926Z'
+custom_position: 0
+special_type: type/Name
+position: 1
+fingerprint_version: 5
+name: name
+database_position: 1
+has_field_values: auto-list
+display_name: Name
+parent_id: null
+caveats: null
+active: true
+database_type: text
+description: null
+fk_target_field_id: null
